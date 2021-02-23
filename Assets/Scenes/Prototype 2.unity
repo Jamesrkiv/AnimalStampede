@@ -688,7 +688,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4cf08a87a1fd764b851956cbf4304bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  rotationSpeed: 150
+  moveSpeed: 8
   xRange: 20
+  zRangeUpper: 16
+  zRangeLower: -1
   projectilePrefab: {fileID: 6161743941859178019, guid: 98876e2f9713b22469192da0404fcdc5,
     type: 3}
