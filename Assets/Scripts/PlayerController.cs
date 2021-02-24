@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    /*
+     * This is in case you guys want to make it so we can get hit by the animals or if we want to restart we can just take this out.
+    public int hitPoints;
+    public int maxHitPoints;
+    */
+
     private float verticalInput;
     private float rotationInput;
     public float rotationSpeed = 50.0f;
@@ -74,4 +80,14 @@ public class PlayerController : MonoBehaviour
         // Changes to idle if character isn't moving
         else animator.SetInteger(animationState, (int)CharStates.idle);
     }
+
+    /*
+    private void OnTriggerEnter(Collider banana)
+    {
+        if (collision.gameObject)
+        {
+
+        }
+    }
+    */
 }

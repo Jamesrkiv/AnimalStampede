@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 23357046182606914}
   - component: {fileID: 5219390796394678326}
   - component: {fileID: 5233025875796911925}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Food_Banana_01
   m_TagString: food
   m_Icon: {fileID: 0}
@@ -106,4 +106,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c12217f9054c88c4c9aa7cf04972c850, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawn: {fileID: 0}
