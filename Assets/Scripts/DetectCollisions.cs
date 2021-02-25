@@ -16,6 +16,8 @@ public class DetectCollisions : MonoBehaviour
     public float score = 0;
     public float winPoints = 300;
     public float pointsPer = 100;
+
+    private bool win = false;
    
 
     // Start is called before the first frame update
@@ -34,7 +36,7 @@ public class DetectCollisions : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "animal")
+        if (other.tag == "animal" && !win)
         {
             gameOver.text = "Game Over";
             // playerController.GetComponent<PlayerController>().enabled = false;
@@ -50,6 +52,7 @@ public class DetectCollisions : MonoBehaviour
             Debug.Log(score);
             if (score == winPoints)
             {
+                win = true;
                 gameOver.text = "You Win!";
                 objective.gameObject.SetActive(false);
                 restartButton.gameObject.SetActive(true);
