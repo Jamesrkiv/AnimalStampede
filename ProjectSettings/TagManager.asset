@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - food
+  - animal
   layers:
   - Default
   - TransparentFX

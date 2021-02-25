@@ -1,13 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class DetectCollisions : MonoBehaviour
 {
+
+    public Text gameOver;
+    public GameObject playerController;
+    public Button restartButton;
+    public Button closeButton;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        restartButton.gameObject.SetActive(false);
+        closeButton.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -18,6 +27,16 @@ public class DetectCollisions : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
+        if (other.tag == "animal")
+        {
+            gameOver.text = "Game Over";
+            playerController.GetComponent<PlayerController>().enabled = false;
+            restartButton.gameObject.SetActive(true);
+            closeButton.gameObject.SetActive(true);
+
+        }
+        
     }
+
+    
 }
