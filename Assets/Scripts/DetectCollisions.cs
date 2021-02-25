@@ -11,6 +11,10 @@ public class DetectCollisions : MonoBehaviour
     public GameObject playerController;
     public Button restartButton;
     public Button closeButton;
+    public GameObject scoreObject;
+
+    private float score = 0;
+    public float pointsPer = 100;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +39,11 @@ public class DetectCollisions : MonoBehaviour
             restartButton.gameObject.SetActive(true);
             closeButton.gameObject.SetActive(true);
 
+        }
+        else if(other.tag == "food")
+        {
+            score += pointsPer;
+            scoreObject.GetComponent<Text>().text = score.ToString("F0");
         }
         
     }
