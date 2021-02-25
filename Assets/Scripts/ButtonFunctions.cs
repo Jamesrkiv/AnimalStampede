@@ -26,4 +26,9 @@ public class ButtonFunctions : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void loadGame()
+    {
+        SceneManager.LoadScene("Game");
+    }
 }

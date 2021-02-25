@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
 
     private bool dead = false;
+    private bool win = false;
 
     public float score = 0;
     public float pointsPer = 100;
@@ -30,7 +31,8 @@ public class PlayerController : MonoBehaviour
     {
         idle = 20,
         walk = 30,
-        death = 50
+        death = 50,
+        dance = 100
     }
 
     // Start is called before the first frame update
@@ -66,7 +68,7 @@ public class PlayerController : MonoBehaviour
         transform.Translate(Vector3.forward * verticalInput * Time.deltaTime * moveSpeed);
         transform.Rotate(0, rotationInput * rotationSpeed * Time.deltaTime, 0);
 
-        if (!dead) UpdateState();
+        if (!dead && !win) UpdateState();
 
         // Looks for spacebar input
         if (Input.GetKeyDown(KeyCode.Space))
@@ -85,7 +87,7 @@ public class PlayerController : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "animal")
+        if (other.tag == "animal" && !win)
         {
             dead = true;
             rotationSpeed = 0f;
@@ -99,9 +101,10 @@ public class PlayerController : MonoBehaviour
             Debug.Log(score);
             if (score == winPoints)
             {
-                dead = true;
+                win = true;
                 rotationSpeed = 0f;
                 moveSpeed = 0f;
+                animator.SetInteger(animationState, (int)CharStates.dance);
             }
                 
         }

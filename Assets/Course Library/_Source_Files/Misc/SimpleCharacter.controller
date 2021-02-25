@@ -1431,7 +1431,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 6
     m_ConditionEvent: Animation_int
-    m_EventTreshold: 4
+    m_EventTreshold: 100
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 110206494}
   m_Solo: 0
@@ -2237,10 +2237,7 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions:
-  - m_ConditionMode: 7
-    m_ConditionEvent: Animation_int
-    m_EventTreshold: 4
+  m_Conditions: []
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 110204265}
   m_Solo: 0

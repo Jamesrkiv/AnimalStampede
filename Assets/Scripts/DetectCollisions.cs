@@ -7,6 +7,7 @@ public class DetectCollisions : MonoBehaviour
 {
 
     public Text gameOver;
+    public Text objective;
     public GameObject playerController;
     public Button restartButton;
     public Button closeButton;
@@ -22,6 +23,7 @@ public class DetectCollisions : MonoBehaviour
     {
         restartButton.gameObject.SetActive(false);
         closeButton.gameObject.SetActive(false);
+        objective.text = "Score to reach:" + winPoints;
     }
 
     // Update is called once per frame
@@ -49,6 +51,7 @@ public class DetectCollisions : MonoBehaviour
             if (score == winPoints)
             {
                 gameOver.text = "You Win!";
+                objective.gameObject.SetActive(false);
                 restartButton.gameObject.SetActive(true);
                 closeButton.gameObject.SetActive(true);
             }
