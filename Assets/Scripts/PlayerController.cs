@@ -2,14 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerController : MonoBehaviour
 {
-    /*
-     * This is in case you guys want to make it so we can get hit by the animals or if we want to restart we can just take this out.
-    public int hitPoints;
-    public int maxHitPoints;
-    */
-
+    
     private float verticalInput;
     private float rotationInput;
     public float rotationSpeed = 50.0f;
@@ -25,6 +21,10 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
 
     private bool dead = false;
+
+    public float score = 0;
+    public float pointsPer = 100;
+    public float winPoints = 300;
 
     enum CharStates
     {
@@ -92,5 +92,19 @@ public class PlayerController : MonoBehaviour
             moveSpeed = 0f;
             animator.SetInteger(animationState, (int)CharStates.death);
         }
+        
+        else if (other.tag == "food")
+        {
+            score += pointsPer;
+            Debug.Log(score);
+            if (score == winPoints)
+            {
+                dead = true;
+                rotationSpeed = 0f;
+                moveSpeed = 0f;
+            }
+                
+        }
+        
     }
 }

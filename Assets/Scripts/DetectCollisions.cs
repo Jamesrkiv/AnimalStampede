@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class DetectCollisions : MonoBehaviour
 {
 
@@ -13,8 +12,10 @@ public class DetectCollisions : MonoBehaviour
     public Button closeButton;
     public GameObject scoreObject;
 
-    private float score = 0;
+    public float score = 0;
+    public float winPoints = 300;
     public float pointsPer = 100;
+   
 
     // Start is called before the first frame update
     void Start()
@@ -40,10 +41,17 @@ public class DetectCollisions : MonoBehaviour
             closeButton.gameObject.SetActive(true);
 
         }
-        else if(other.tag == "food")
+        else if (other.tag == "food")
         {
             score += pointsPer;
             scoreObject.GetComponent<Text>().text = score.ToString("F0");
+            Debug.Log(score);
+            if (score == winPoints)
+            {
+                gameOver.text = "You Win!";
+                restartButton.gameObject.SetActive(true);
+                closeButton.gameObject.SetActive(true);
+            }
         }
         
     }
