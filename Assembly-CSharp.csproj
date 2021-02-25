@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\Banana\Consumable.cs" />
      <Compile Include="Assets\Scripts\Banana\FoodCollision.cs" />
      <Compile Include="Assets\Scripts\Banana\Item.cs" />
+     <Compile Include="Assets\Scripts\ButtonFunctions.cs" />
      <Compile Include="Assets\Scripts\DestroyOutOfBounds.cs" />
      <Compile Include="Assets\Scripts\DetectCollisions.cs" />
      <Compile Include="Assets\Scripts\FoodSpawn.cs" />

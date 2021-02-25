@@ -24,10 +24,13 @@ public class PlayerController : MonoBehaviour
     private string animationState = "Animation_int";
     private Animator animator;
 
+    private bool dead = false;
+
     enum CharStates
     {
         idle = 20,
-        walk = 30
+        walk = 30,
+        death = 50
     }
 
     // Start is called before the first frame update
@@ -63,13 +66,13 @@ public class PlayerController : MonoBehaviour
         transform.Translate(Vector3.forward * verticalInput * Time.deltaTime * moveSpeed);
         transform.Rotate(0, rotationInput * rotationSpeed * Time.deltaTime, 0);
 
-        UpdateState();
+        if (!dead) UpdateState();
 
         // Looks for spacebar input
         if (Input.GetKeyDown(KeyCode.Space))
         {
             // Launch projectile from player
-            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+            if (!dead) Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
         }
     }
     private void UpdateState()
@@ -80,14 +83,14 @@ public class PlayerController : MonoBehaviour
         // Changes to idle if character isn't moving
         else animator.SetInteger(animationState, (int)CharStates.idle);
     }
-
-    /*
-    private void OnTriggerEnter(Collider banana)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject)
+        if (other.tag == "animal")
         {
-
+            dead = true;
+            rotationSpeed = 0f;
+            moveSpeed = 0f;
+            animator.SetInteger(animationState, (int)CharStates.death);
         }
     }
-    */
 }

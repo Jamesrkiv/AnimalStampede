@@ -30,7 +30,8 @@ public class DetectCollisions : MonoBehaviour
         if (other.tag == "animal")
         {
             gameOver.text = "Game Over";
-            playerController.GetComponent<PlayerController>().enabled = false;
+            // playerController.GetComponent<PlayerController>().enabled = false;
+            // Functionality moved to PlayerController.cs to get animation transitions working
             restartButton.gameObject.SetActive(true);
             closeButton.gameObject.SetActive(true);
 
