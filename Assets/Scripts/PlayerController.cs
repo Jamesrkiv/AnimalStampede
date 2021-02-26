@@ -70,12 +70,14 @@ public class PlayerController : MonoBehaviour
 
         if (!dead && !win) UpdateState();
 
+        /*
         // Looks for spacebar input
         if (Input.GetKeyDown(KeyCode.Space))
         {
             // Launch projectile from player
             if (!dead) Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
         }
+        */
     }
     private void UpdateState()
     {

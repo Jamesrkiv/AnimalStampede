@@ -732,18 +732,18 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: c623000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: PlayerController
+      m_OriginalName: PlayerController
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 12226
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 15}
     m_CreateAssetUtility:
@@ -885,9 +885,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 442.53125, y: 251.77344, z: 46.75}
+    m_Target: {x: -18.932617, y: 12.712402, z: -30.323242}
     speed: 2
-    m_Value: {x: 442.53125, y: 251.77344, z: 46.75}
+    m_Value: {x: -18.932617, y: 12.712402, z: -30.323242}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -933,13 +933,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.05935773, y: 0.013475832, z: -0.0008005321, w: 0.998147}
+    m_Target: {x: 0.1466869, y: 0.2162328, z: -0.032878257, w: 0.964703}
     speed: 2
-    m_Value: {x: 0.059357636, y: 0.013475811, z: -0.0008005309, w: 0.99814546}
+    m_Value: {x: 0.14668642, y: 0.2162321, z: -0.032878153, w: 0.9646999}
   m_Size:
-    m_Target: 337.7702
+    m_Target: 13.605403
     speed: 2
-    m_Value: 337.7702
+    m_Value: 13.605403
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -995,7 +995,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 66fbffff68fbffffee33000098490000
+      m_ExpandedIDs: 
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
